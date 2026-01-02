@@ -1,0 +1,41 @@
+{
+  "personalInfo": {
+    "name": "Tu Nombre",
+    "title": "Desarrollador Web",
+    "description": "Apasionado por crear experiencias web modernas y elegantes"
+  },
+  "socialMedia": {
+    "instagram": "",
+    "whatsapp": "",
+    "telegram": "",
+    "x": "",
+    "pinterest": "",
+    "tumblr": ""
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Pizzeria Triangolari",
+      "description": "Una aplicación web comercial con sistema de pedidos en línea",
+      "image": "https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Proyecto+1",
+      "link": "https://carlofduty666.github.io/proyectopizzeria/",
+      "tags": ["CSS puro", "Tailwind", "Responsive Design", "SEO Friendly"]
+    },
+    {
+      "id": 2,
+      "title": "Proyecto Demo 2",
+      "description": "Dashboard interactivo con visualización de datos",
+      "image": "https://via.placeholder.com/400x300/06b6d4/ffffff?text=Proyecto+2",
+      "link": "https://ejemplo.com/proyecto2",
+      "tags": ["JavaScript", "Charts", "UI/UX"]
+    },
+    {
+      "id": 3,
+      "title": "Proyecto Demo 3",
+      "description": "E-commerce con carrito de compras funcional",
+      "image": "https://via.placeholder.com/400x300/0284c7/ffffff?text=Proyecto+3",
+      "link": "https://ejemplo.com/proyecto3",
+      "tags": ["React", "Redux", "Stripe"]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-scope: 'Scope One', serif;
+  
+  --color-frost-50: #f0f9ff;
+  --color-frost-100: #e0f2fe;
+  --color-frost-200: #bae6fd;
+  --color-frost-300: #7dd3fc;
+  --color-frost-400: #38bdf8;
+  --color-frost-500: #0ea5e9;
+  --color-frost-600: #0284c7;
+  --color-frost-700: #0369a1;
+  --color-frost-800: #075985;
+  --color-frost-900: #0c4a6e;
+  --color-frost-950: #082f49;
+  
+  --color-ice-50: #ecfeff;
+  --color-ice-100: #cffafe;
+  --color-ice-200: #a5f3fc;
+  --color-ice-300: #67e8f9;
+  --color-ice-400: #22d3ee;
+  --color-ice-500: #06b6d4;
+  --color-ice-600: #0891b2;
+  --color-ice-700: #0e7490;
+  --color-ice-800: #155e75;
+  --color-ice-900: #164e63;
+  --color-ice-950: #083344;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Scope One', serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9, 0 0 30px #0ea5e9;
+    }
+    to {
+      text-shadow: 0 0 20px #06b6d4, 0 0 30px #06b6d4, 0 0 40px #06b6d4;
+    }
+  }
+}
