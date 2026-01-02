@@ -8,7 +8,7 @@ const Projects = ({ projects }) => {
       
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-orbitron text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-frost-400 to-ice-400 bg-clip-text text-transparent">
+          <h2 className="font-figtree text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-frost-400 to-ice-400 bg-clip-text text-transparent">
             Mis Proyectos
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-frost-500 to-ice-500 mx-auto rounded-full"></div>

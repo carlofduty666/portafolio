@@ -20,12 +20,12 @@ const SocialMedia = ({ socialMedia }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-ice-950/5 to-black"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 className="font-orbitron text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-ice-400 to-frost-400 bg-clip-text text-transparent">
+        <h2 className="font-figtree text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-ice-400 to-frost-400 bg-clip-text text-transparent">
           Conecta Conmigo
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-ice-500 to-frost-500 mx-auto rounded-full mb-12"></div>
 
-        <p className="font-scope text-gray-400 text-lg mb-12">
+        <p className="font-figtree text-gray-400 text-lg mb-12">
           Encuéntrame en mis redes sociales
         </p>
 
@@ -42,7 +42,7 @@ const SocialMedia = ({ socialMedia }) => {
                 aria-label={label}
               >
                 <Icon className="text-4xl text-frost-300 group-hover:text-white transition-colors duration-300" />
-                <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-orbitron text-frost-300 whitespace-nowrap">
+                <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-figtree text-frost-300 whitespace-nowrap">
                   {label}
                 </span>
               </a>

@@ -23,10 +23,10 @@ const ProjectCard = ({ project }) => {
       </div>
 
       <div className="p-6">
-        <h3 className="font-orbitron text-2xl font-bold text-frost-300 mb-3 group-hover:text-frost-200 transition-colors duration-300">
+        <h3 className="font-figtree text-2xl font-bold text-frost-300 mb-3 group-hover:text-frost-200 transition-colors duration-300">
           {project.title}
         </h3>
-        <p className="font-scope text-gray-400 mb-4 leading-relaxed">
+        <p className="font-figtree text-gray-400 mb-4 leading-relaxed">
           {project.description}
         </p>
         
@@ -34,7 +34,7 @@ const ProjectCard = ({ project }) => {
           {project.tags.map((tag, index) => (
             <span 
               key={index}
-              className="px-3 py-1 text-xs font-orbitron bg-frost-900/30 text-frost-300 rounded-full border border-frost-700/30 hover:bg-frost-800/40 hover:border-frost-600/50 transition-all duration-300"
+              className="px-3 py-1 text-xs font-figtree bg-frost-900/30 text-frost-300 rounded-full border border-frost-700/30 hover:bg-frost-800/40 hover:border-frost-600/50 transition-all duration-300"
             >
               {tag}
             </span>
