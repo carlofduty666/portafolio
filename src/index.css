@@ -3,36 +3,17 @@
 @theme {
   --font-figtree: 'Figtree', sans-serif;
   
-  --color-frost-50: #f8fafc;
-  --color-frost-100: #f1f5f9;
-  --color-frost-200: #e2e8f0;
-  --color-frost-300: #cbd5e1;
-  --color-frost-400: #94a3b8;
-  --color-frost-500: #64748b;
-  --color-frost-600: #475569;
-  --color-frost-700: #334155;
-  --color-frost-800: #1e293b;
-  --color-frost-900: #0f172a;
-  --color-frost-950: #020617;
-  
-  --color-ice-50: #f0f7ff;
-  --color-ice-100: #e0effe;
-  --color-ice-200: #bae0fd;
-  --color-ice-300: #7dd0fc;
-  --color-ice-400: #38b0f8;
-  --color-ice-500: #0e95e9;
-  --color-ice-600: #0274c7;
-  --color-ice-700: #0359a1;
-  --color-ice-800: #074985;
-  --color-ice-900: #0c3a6e;
-  --color-ice-950: #081f49;
+  --color-primary: #848484;
+  --color-secondary: #ffffffde;
+  --color-accent: #ffffde;
+  --color-bg-dark: #0a0c0a;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--color-bg-dark);
+  color: var(--color-secondary);
   font-family: 'Figtree', sans-serif;
   overflow-x: hidden;
 }
@@ -59,12 +40,12 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  @keyframes glow {
+  /* @keyframes glow {
     from {
-      text-shadow: 0 0 10px rgba(14, 149, 233, 0.3), 0 0 20px rgba(14, 149, 233, 0.2);
+      text-shadow: 0 0 10px rgba(132, 132, 132, 0.3), 0 0 20px rgba(132, 132, 132, 0.2);
     }
     to {
-      text-shadow: 0 0 20px rgba(56, 176, 248, 0.4), 0 0 30px rgba(56, 176, 248, 0.3);
+      text-shadow: 0 0 20px rgba(255, 255, 222, 0.4), 0 0 30px rgba(255, 255, 222, 0.3);
     }
-  }
+  } */
 }
