@@ -6,7 +6,7 @@ const Hero = ({ name, title, description }) => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0">
-          <DarkVeil hueShift={-165} speed={1.80} noiseIntensity={0.01} />
+          <DarkVeil hueShift={-165} speed={1.80} noiseIntensity={0.01} warpAmount={4.9} scanlineFrequency={2.8} />
         </div>
         
         <div className="absolute inset-0 bg-gradient-to-b from-bg-dark/60 via-transparent to-bg-dark"></div>
@@ -31,15 +31,15 @@ const Hero = ({ name, title, description }) => {
         <div className="mt-12 flex justify-center gap-4">
           <a 
             href="#projects" 
-            className="px-8 py-4 bg-accent/10 border border-accent/20 rounded-lg font-figtree font-semibold text-accent hover:bg-accent/20 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-accent/10"
+            className="px-6 py-3 bg-accent/10 border border-accent/20 rounded-4xl font-figtree font-semibold text-accent hover:bg-accent/20 transform transition-all duration-300 shadow-lg hover:shadow-accent/10"
           >
             Ver Proyectos
           </a>
           <a 
             href="#contact" 
-            className="px-8 py-4 border border-primary/30 rounded-lg font-figtree font-semibold text-primary hover:bg-primary/10 transform hover:scale-105 transition-all duration-300"
+            className="px-6 py-3 border border-primary/30 rounded-4xl font-figtree font-semibold text-primary hover:bg-primary/10 transform transition-all duration-300"
           >
-            Contacto
+            Contactar
           </a>
         </div>
       </div>
