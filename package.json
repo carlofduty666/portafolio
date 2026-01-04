@@ -12,7 +12,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/postcss": "^4.1.18",
+    "gsap": "^3.14.2",
+    "motion": "^12.23.26",
     "ogl": "^1.0.11",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

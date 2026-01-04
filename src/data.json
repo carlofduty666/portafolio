@@ -4,6 +4,21 @@
     "title": "Desarrollador Web",
     "description": "Transformo necesidades en soluciones digitales efectivas. Código limpio, arquitectura escalable y atención al detalle."
   },
+  "technologies": [
+    "JavaScript",
+    "Python",
+    "PHP",
+    "Dart",
+    "Node.js",
+    "Flutter",
+    "Flask",
+    "Django",
+    "React",
+    "Tailwind",
+    "SQL",
+    "PostgreSQL",
+    "Git"
+  ],
   "socialMedia": {
     "instagram": "",
     "whatsapp": "",
