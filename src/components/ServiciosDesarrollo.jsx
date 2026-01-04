@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaCogs, FaChartLine, FaRocket, FaGem } from 'react-icons/fa';
+import { FaCogs, FaChartLine, FaRocket, FaGem, FaUserCheck, FaTachometerAlt, FaMobileAlt, FaSearch, FaShieldAlt, FaHeartbeat, FaHeadset } from 'react-icons/fa';
 import Squares from './Squares';
 import Shuffle from './Shuffle';
 
@@ -35,8 +35,21 @@ const ServiciosDesarrollo = ({ technologies }) => {
     { text: "Generan valor tangible", icon: <FaGem /> }
   ];
 
+  const featureItems = [
+    { text: "UX/UI centrado en el usuario final", icon: <FaUserCheck /> },
+    { text: "Performance optimizada", icon: <FaTachometerAlt /> },
+    { text: "Responsividad total", icon: <FaMobileAlt /> },
+    { text: "SEO técnico integrado", icon: <FaSearch /> }
+  ];
+
+  const maintenanceItems = [
+    { text: "Actualizaciones de seguridad", icon: <FaShieldAlt /> },
+    { text: "Monitoreo de rendimiento", icon: <FaHeartbeat /> },
+    { text: "Soporte técnico escalable", icon: <FaHeadset /> }
+  ];
+
   return (
-    <section ref={containerRef} className="py-24 px-4 md:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 overflow-hidden relative">
+    <section ref={containerRef} className="py-24 px-4 md:px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20 overflow-hidden relative">
         {/* Background Squares */}
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
             <Squares 
@@ -61,24 +74,58 @@ const ServiciosDesarrollo = ({ technologies }) => {
                 </p>
             </div>
 
-            <ul className="space-y-6 pl-2">
-                {items.map((item, index) => (
-                    <li 
-                        key={index} 
-                        className="flex items-center gap-5 text-gray-200 text-lg md:text-xl group"
-                        style={{ 
-                            opacity: isVisible ? 1 : 0, 
-                            transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
-                            transition: `all 0.5s ease-out ${index * 0.15 + 0.5}s`
-                        }}
-                    >
-                        <div className="p-3 rounded-lg bg-[#ffffff10] text-[#ffffde] group-hover:bg-[#ffffde] group-hover:text-black transition-colors duration-300">
-                            {item.icon}
-                        </div>
-                        <span className="font-medium">{item.text}</span>
-                    </li>
-                ))}
-            </ul>
+            <div className="grid md:grid-cols-2 gap-x-4 gap-y-6">
+                 {/* Original Items */}
+                <ul className="space-y-4">
+                    {items.map((item, index) => (
+                        <li 
+                            key={`item-${index}`} 
+                            className="flex items-center gap-3 text-gray-200 text-lg group"
+                        >
+                            <div className="p-2 rounded-lg bg-[#ffffff10] text-[#ffffde] group-hover:bg-[#ffffde] group-hover:text-black transition-colors duration-300">
+                                {item.icon}
+                            </div>
+                            <span className="font-medium text-base">{item.text}</span>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Feature Items */}
+                <ul className="space-y-4">
+                    {featureItems.map((item, index) => (
+                        <li 
+                            key={`feature-${index}`} 
+                            className="flex items-center gap-3 text-gray-200 text-lg group"
+                        >
+                            <div className="p-2 rounded-lg bg-[#ffffff10] text-[#ffffde] group-hover:bg-[#ffffde] group-hover:text-black transition-colors duration-300">
+                                {item.icon}
+                            </div>
+                            <span className="font-medium text-base">{item.text}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            {/* Maintenance Section */}
+            <div className="space-y-4 pt-4 border-t border-gray-800">
+                 <p className="text-xl text-gray-300 font-light">
+                    Y ofrezco mantenimiento continuo:
+                </p>
+                <ul className="space-y-4 pl-2">
+                     {maintenanceItems.map((item, index) => (
+                        <li 
+                            key={`maint-${index}`} 
+                            className="flex items-center gap-4 text-gray-200 text-lg group"
+                        >
+                            <div className="p-2 rounded-lg bg-[#ffffff10] text-[#848484] group-hover:bg-[#848484] group-hover:text-white transition-colors duration-300">
+                                {item.icon}
+                            </div>
+                            <span className="font-medium">{item.text}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
 
              <div className="pt-8 border-t border-gray-800 mt-8" style={{ 
                     opacity: isVisible ? 1 : 0, 
@@ -98,12 +145,12 @@ const ServiciosDesarrollo = ({ technologies }) => {
 
         {/* Right Side - Shuffle Text */}
         <div className={`flex-1 w-full flex flex-col justify-center items-center z-10 transition-all duration-1000 ease-out delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-             <div className="text-right space-y-8">
+             <div className="text-right space-y-8 sticky top-20">
                 <Shuffle 
                     text="Desarrollo de software" 
                     className="text-4xl md:text-6xl font-bold text-[#ffffde] block mb-4"
                     shuffleTimes={1}
-                    loop='true'
+                    loop={true}
                     duration={0.8}
                 />
                 <Shuffle 
@@ -111,14 +158,14 @@ const ServiciosDesarrollo = ({ technologies }) => {
                     className="text-3xl md:text-5xl font-bold text-[#848484] block mb-4"
                     shuffleTimes={2}
                     maxDelay={0.5}
-                    loop='true'
+                    loop={true}
                 />
                 <Shuffle 
                     text="UX/UI - diseño web" 
                     className="text-3xl md:text-5xl font-bold text-gray-200 block"
                     shuffleTimes={1}
                     maxDelay={1}
-                    loop='true'
+                    loop={true}
                     duration={0.8}
                 />
              </div>

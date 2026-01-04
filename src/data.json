@@ -20,9 +20,13 @@
     "Git"
   ],
   "socialMedia": {
-    "instagram": "",
-    "whatsapp": "",
+    "github": "https://github.com/carlofduty666",
+    "linkedin": "https://www.linkedin.com/in/carlos-longa-0a419b336/",
+    "facebook": "",
+    "instagram": "https://instagram.com/cyber_tsvet",
+    "whatsapp": "https://wa.me/584248020169",
     "telegram": "",
+    "threads": "",
     "x": "",
     "pinterest": "",
     "tumblr": ""
@@ -34,7 +38,7 @@
       "description": "Una aplicación web comercial con sistema de pedidos en línea",
       "image": "https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Proyecto+1",
       "link": "https://carlofduty666.github.io/proyectopizzeria/",
-      "tags": ["CSS puro", "Tailwind", "Responsive Design", "SEO Friendly"]
+      "tags": ["CSS puro", "HTML puro", "Responsive Design", "SEO Friendly"]
     },
     {
       "id": 2,

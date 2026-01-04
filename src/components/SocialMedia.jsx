@@ -1,17 +1,23 @@
 import React from 'react';
-import { FaInstagram, FaWhatsapp, FaTelegram, FaXTwitter, FaPinterest, FaTumblr } from 'react-icons/fa6';
+import { FaInstagram, FaWhatsapp, FaTelegram, FaXTwitter, FaPinterest, FaTumblr, FaGithub, FaLinkedin, FaFacebook, FaThreads } from 'react-icons/fa6';
 
 const SocialMedia = ({ socialMedia }) => {
   const socialIcons = {
+    github: { icon: FaGithub, color: 'hover:bg-primary/20', label: 'GitHub' },
+    linkedin: { icon: FaLinkedin, color: 'hover:bg-primary/20', label: 'LinkedIn' },
+    facebook: { icon: FaFacebook, color: 'hover:bg-primary/20', label: 'Facebook' },
     instagram: { icon: FaInstagram, color: 'hover:bg-primary/20', label: 'Instagram' },
     whatsapp: { icon: FaWhatsapp, color: 'hover:bg-primary/20', label: 'WhatsApp' },
     telegram: { icon: FaTelegram, color: 'hover:bg-primary/20', label: 'Telegram' },
     x: { icon: FaXTwitter, color: 'hover:bg-primary/20', label: 'X (Twitter)' },
     pinterest: { icon: FaPinterest, color: 'hover:bg-primary/20', label: 'Pinterest' },
-    tumblr: { icon: FaTumblr, color: 'hover:bg-primary/20', label: 'Tumblr' }
+    tumblr: { icon: FaTumblr, color: 'hover:bg-primary/20', label: 'Tumblr' },
+    threads: { icon: FaThreads, color: 'hover:bg-primary/20', label: 'Threads' }
   };
 
-  const activeSocials = Object.entries(socialMedia).filter(([_, url]) => url && url.trim() !== '');
+  const activeSocials = Object.entries(socialMedia).filter(([platform, url]) => {
+    return url && url.trim() !== '' && socialIcons[platform];
+  });
 
   if (activeSocials.length === 0) return null;
 

@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --font-figtree: 'Figtree', sans-serif;
-  
+
   --color-primary: #848484;
   --color-secondary: #ffffffde;
   --color-accent: #ffffde;
@@ -31,6 +33,10 @@ h1, h2, h3, h4, h5, h6 {
     animation: glow 2s ease-in-out infinite alternate;
   }
 
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   @keyframes float {
     0%, 100% {
       transform: translateY(0px);
@@ -40,12 +46,14 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  /* @keyframes glow {
+  @keyframes fadeInUp {
     from {
-      text-shadow: 0 0 10px rgba(132, 132, 132, 0.3), 0 0 20px rgba(132, 132, 132, 0.2);
+      opacity: 0;
+      transform: translateY(30px);
     }
     to {
-      text-shadow: 0 0 20px rgba(255, 255, 222, 0.4), 0 0 30px rgba(255, 255, 222, 0.3);
+      opacity: 1;
+      transform: translateY(0);
     }
-  } */
+  }
 }
