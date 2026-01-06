@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope, FaLocationDot, FaPhone, FaInstagram, FaWhatsapp, FaTelegram, FaFacebook, FaPinterest, FaTumblr, FaThreads } from 'react-icons/fa6';
 
 const Contact = ({ socialMedia = {}, name }) => {
@@ -8,6 +9,8 @@ const Contact = ({ socialMedia = {}, name }) => {
     email: '',
     message: ''
   });
+  
+  const [status, setStatus] = useState(''); // 'idle', 'sending', 'success', 'error'
 
   const handleChange = (e) => {
     setFormState({
@@ -18,9 +21,34 @@ const Contact = ({ socialMedia = {}, name }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here (e.g., mailto or API)
-    console.log('Form submitted:', formState);
-    alert('Mensaje enviado (simulación)');
+    setStatus('sending');
+
+    // IMPORTANTE: Reemplaza estos valores con los de tu cuenta de EmailJS
+    // Crea una cuenta en https://www.emailjs.com/
+    const serviceID = 'service_x30litj'; // Tu Service ID
+    const templateID = 'template_j1lweqt'; // Tu Template ID
+    const publicKey = 'VBidRt0Wa315JYgqz'; // Tu Public Key
+
+    const templateParams = {
+      from_name: formState.name,
+      from_email: formState.email,
+      message: formState.message,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setStatus('success');
+        setFormState({ name: '', email: '', message: '' });
+        
+        // Reset status after 5 seconds
+        setTimeout(() => setStatus(''), 5000);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+        setStatus('error');
+        setTimeout(() => setStatus(''), 5000);
+      });
   };
 
   const socialIcons = {
@@ -103,10 +131,18 @@ const Contact = ({ socialMedia = {}, name }) => {
               
               <button 
                 type="submit" 
-                className="w-full bg-secondary text-bg-dark font-bold py-3 px-6 rounded-lg hover:bg-accent transition-colors duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                disabled={status === 'sending'}
+                className={`w-full bg-secondary text-bg-dark font-bold py-3 px-6 rounded-lg hover:bg-accent transition-colors duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${status === 'sending' ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                Enviar Mensaje
+                {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
+              
+              {status === 'success' && (
+                <p className="text-green-400 text-center font-medium">¡Mensaje enviado con éxito!</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-center font-medium">Hubo un error al enviar el mensaje. Inténtalo de nuevo.</p>
+              )}
             </form>
           </motion.div>
 
