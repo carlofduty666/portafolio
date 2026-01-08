@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 import ProjectCard from './ProjectCard';
 
 const Projects = ({ projects }) => {
@@ -20,8 +22,8 @@ const Projects = ({ projects }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+          {projects.slice(0, 3).map((project, index) => (
             <div 
               key={project.id}
               className="opacity-0 animate-fade-in-up" 
@@ -30,6 +32,16 @@ const Projects = ({ projects }) => {
               <ProjectCard project={project} />
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Link 
+            to="/projects" 
+            className="group flex items-center gap-3 px-8 py-4 bg-transparent border border-accent/30 text-accent rounded-full font-bold hover:bg-accent hover:text-bg-dark transition-all duration-300 hover:shadow-lg hover:shadow-accent/20"
+          >
+            <span>Ver todos los proyectos</span>
+            <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

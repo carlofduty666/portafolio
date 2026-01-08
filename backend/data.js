@@ -1,4 +1,4 @@
-{
+const data = {
   "personalInfo": {
     "name": "Carlos Longa",
     "title": "Desarrollador Web Full Stack",
@@ -67,6 +67,20 @@
       "solution": "Integración de Redux Toolkit para el estado y Stripe API para pasarela de pagos segura.",
       "technologies": ["React", "Redux Toolkit", "Stripe API", "Node.js"],
       "result": "Plataforma escalable capaz de procesar transacciones reales con seguridad de nivel bancario."
+    },
+      {
+      "id": 4,
+      "title": "Proyecto Demo 4",
+      "description": "Aplicación de Marvel",
+      "image": "https://via.placeholder.com/400x300/0284c7/ffffff?text=Proyecto+3",
+      "link": "https://ejemplo.com/proyecto3",
+      "tags": ["CSS", "HTML", "Javascript"],
+      "challenge": "Implementar un estado global complejo para el carrito y gestión segura de pagos.",
+      "solution": "Integración de Redux Toolkit para el estado y Stripe API para pasarela de pagos segura.",
+      "technologies": ["React", "Redux Toolkit", "Stripe API", "Node.js"],
+      "result": "Plataforma escalable capaz de procesar transacciones reales con seguridad de nivel bancario."
     }
   ]
-}
+};
+
+module.exports = data;

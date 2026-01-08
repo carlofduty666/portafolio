@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onClick }) => {
   const [imgError, setImgError] = useState(false);
   
   // Microlink API to generate screenshot from URL
@@ -12,7 +12,10 @@ const ProjectCard = ({ project }) => {
   const displayImage = imgError ? (project.image || 'https://via.placeholder.com/600x400?text=No+Preview') : screenshotUrl;
 
   return (
-    <div className="group relative bg-bg-dark border border-primary/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/5 flex flex-col h-full">
+    <div 
+      className={`group relative bg-bg-dark border border-primary/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/5 flex flex-col h-full ${onClick ? 'cursor-pointer' : ''}`}
+      onClick={onClick}
+    >
       
       {/* Browser Chrome / Header */}
       <div className="bg-white/5 px-4 py-3 border-b border-white/5 flex items-center gap-2 backdrop-blur-sm">
@@ -42,6 +45,7 @@ const ProjectCard = ({ project }) => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex items-center gap-2 px-6 py-2.5 bg-accent text-bg-dark rounded-full font-bold transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white hover:scale-105 shadow-lg shadow-accent/20"
             >
               <FiExternalLink />
