@@ -1,3 +1,11 @@
 node_modules
 .zenflow
 .zencoder
+.env
+.env.*
+dist
+build
+.DS_Store
+*.log
+backend/node_modules
+backend/.env
