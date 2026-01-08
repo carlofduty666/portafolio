@@ -9,6 +9,11 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.send('Portfolio Backend is running');
+});
+
 // Endpoint to get all portfolio data
 app.get('/api/data', (req, res) => {
   res.json(data);
