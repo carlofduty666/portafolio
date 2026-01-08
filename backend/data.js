@@ -13,9 +13,12 @@ const data = {
     "Flutter",
     "Flask",
     "Django",
+    "Laravel",
     "React",
+    "Angular",
     "Tailwind",
     "SQL",
+    "MongoDB",
     "PostgreSQL",
     "Git"
   ],
