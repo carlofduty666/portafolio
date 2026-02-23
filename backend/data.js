@@ -61,6 +61,17 @@ const data = {
     },
     {
       "id": 3,
+      "title": "SmartBoletin",
+      "description": "Sistema integral de gestión académica diseñado para automatizar la generación de reportes y boletines. Permite transformar plantillas de Excel preexistentes en motores de inyección de datos dinámicos, eliminando la creación manual de documentos.",
+      "image": "https://via.placeholder.com/400x300/0284c7/ffffff?text=SmartBoletin",
+      "link": "https://smartboletin-demo.onrender.com/",
+      "tags": ["Python", "Flask", "SQLAlchemy", "Excel-Automation"],
+      "challenge": "Eliminar el cuello de botella administrativo donde una sola persona procesaba manualmente miles de calificaciones, y evitar la tediosa tarea de programar desde cero el diseño de reportes institucionales complejos en Excel.",
+      "solution": "Desarrollé una arquitectura de roles (Admin/Profesor) que descentraliza la carga de datos. Implementé un motor con OpenPyXL capaz de importar archivos Excel, clonar sus estilos y formatos originales, y utilizarlos como plantillas maestras para la inyección automática de calificaciones mediante rangos dinámicos.",
+      "result": "Se redujo el tiempo de generación de reportes finales de días a segundos. La institución logra mantener sus formatos estéticos originales sin intervención de un programador, garantizando integridad de datos y autonomía para el personal docente."
+    },
+    {
+      "id": 4,
       "title": "Generador de Memes",
       "description": "Aplicación recreativa para crear memes de gatos",
       "image": "https://via.placeholder.com/400x300/0284c7/ffffff?text=Proyecto+3",
@@ -70,19 +81,8 @@ const data = {
       "solution": "Implementé Canvas API para manipular imágenes en tiempo real, permitiendo posicionar texto, cambiar estilos de fuente y aplicar filtros básicos sin necesidad de librerías externas.",
       "technologies": ["HTML", "CSS", "Canvas", "Javascript"],
       "result": "Aplicación funcional con capacidad de crear y descargar memes personalizados en formato PNG, interfaz responsive y experiencia de usuario fluida."
-    },
-      {
-      "id": 4,
-      "title": "Proyecto Demo 4",
-      "description": "Aplicación de Marvel",
-      "image": "https://via.placeholder.com/400x300/0284c7/ffffff?text=Proyecto+3",
-      "link": "https://ejemplo.com/proyecto3",
-      "tags": ["CSS", "HTML", "Javascript"],
-      "challenge": "Implementar un estado global complejo para el carrito y gestión segura de pagos.",
-      "solution": "Integración de Redux Toolkit para el estado y Stripe API para pasarela de pagos segura.",
-      "technologies": ["React", "Redux Toolkit", "Stripe API", "Node.js"],
-      "result": "Plataforma escalable capaz de procesar transacciones reales con seguridad de nivel bancario."
     }
+
   ]
 };
 
