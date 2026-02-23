@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiX, FiExternalLink, FiGithub } from 'react-icons/fi';
 
 const ProjectModal = ({ project, onClose }) => {
+  const [imgError, setImgError] = useState(false);
+
   useEffect(() => {
     // Prevent scrolling when modal is open
     document.body.style.overflow = 'hidden';
@@ -9,6 +11,13 @@ const ProjectModal = ({ project, onClose }) => {
       document.body.style.overflow = 'unset';
     };
   }, []);
+
+  // Microlink API to generate screenshot from URL
+  const screenshotUrl = project.link 
+    ? `https://api.microlink.io/?url=${encodeURIComponent(project.link)}&screenshot=true&meta=false&embed=screenshot.url`
+    : project.image;
+
+  const displayImage = imgError ? (project.image || 'https://via.placeholder.com/600x400?text=No+Preview') : screenshotUrl;
 
   if (!project) return null;
 
@@ -44,9 +53,10 @@ const ProjectModal = ({ project, onClose }) => {
             <div className="w-full lg:w-2/5 bg-white/5">
               <div className="h-64 lg:h-80 w-full relative">
                 <img 
-                  src={project.image} 
+                  src={displayImage} 
                   alt={project.title} 
                   className="w-full h-full object-cover"
+                  onError={() => setImgError(true)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent lg:hidden"></div>
               </div>
